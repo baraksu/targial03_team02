@@ -33,9 +33,9 @@ public class Encryption
             word3 = str.substring(str.lastIndexOf(" ")+1);
             str = word3 + " " + word1 + " " + word2;
         }
-        String move = str.substring(str.length() - words);
+        String movment = str.substring(str.length() - words);
         str = str.substring(0,str.length() - words);
-        str = move + str;
+        str = movment + str;
         str = str.replace('u','&');
         str = str.replace('a','@');
         str = str.replace('e','#');

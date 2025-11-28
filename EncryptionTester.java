@@ -11,10 +11,10 @@ import org.junit.Test;
 public class EncryptionTester
 {
     @Test
-    public void testAdd(){
+    public void testEncryption(){
         
-        int result = Encryption.add(2,3);
-        assertEquals(5,result);
+        String result = Encryption.encryption("better computer science");
+        assertEquals("t#rsc1#nc# b#tt#r c0mp&",result);
         
     }
     

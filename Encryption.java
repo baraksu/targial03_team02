@@ -79,5 +79,16 @@ public class Encryption
             str = word1 + " " + word2 + " " + word3;
         }
     }
+    int program = reader.nextInt();
+    if (checkNum(programNum)) { 
+        return;
+    }
+    public static boolean checkNum(int num){
+        if num == 1 ||num == 2)
+            return false;
+        else{
+            System.out.println(num + " is not valid choise);
+            return true;
+    } 
 
 }

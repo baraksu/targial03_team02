@@ -16,10 +16,10 @@ public class Encryption
         int len2 = str1.length();
         int words = len1 - len2 + 1;
         if (words>3){
-            System.out.println    
-
+            System.out.println("Error - there are more than 3 words");
+            return;
         }
-    
+
         String word1 = "";
         String word2 = "";
         String word3 = "";

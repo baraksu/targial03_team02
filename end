@@ -52,10 +52,7 @@ public class Encryption{
         }
     }
     public static String encryption1(String str){
-        int len1 = str.length();
-        String str1 = str.replace(" ","");
-        int len2 = str1.length();
-        int words = len1 - len2 + 1;
+        words=1
         String word1 = "";
         String word2 = "";
         String word3 = "";    
@@ -70,10 +67,7 @@ public class Encryption{
         return str;
     }
     public static String encryption2(String str){
-        int len1 = str.length();
-        String str1 = str.replace(" ","");
-        int len2 = str1.length();
-        int words = len1 - len2 + 1;
+        words=2
         String word1 = "";
         String word2 = "";
         String word3 = "";    
@@ -91,10 +85,7 @@ public class Encryption{
         return str;
     }
     public static String encryption3(String str){
-        int len1 = str.length();
-        String str1 = str.replace(" ","");
-        int len2 = str1.length();
-        int words = len1 - len2 + 1;
+        words=3
         String word1 = "";
         String word2 = "";
         String word3 = "";    
@@ -108,4 +99,70 @@ public class Encryption{
         str = str.replace('u','&');
         str = str.replace('a','@');
         str = str.replace('e','#');
-        str = s…
+        str = str.replace('i','1');
+        str = str.replace('o','0');
+        return str;
+    }
+    public static String decryption1(String str){
+        words=1
+        String word1 = "";
+        String word2 = "";
+        String word3 = "";
+        str = str.replace('&','u');
+        str = str.replace('@','a');
+        str = str.replace('#','e');
+        str = str.replace('1','i');
+        str = str.replace('0','o');
+
+        String movement = str.substring(0, words);
+        str = str.substring(str.length() - words);
+        str = str+movement;
+
+        return str;
+
+    }
+    public static String decryption2(String str){
+        words=2
+        String word1 = "";
+        String word2 = "";
+        String word3 = "";
+        str = str.replace('&','u');
+        str = str.replace('@','a');
+        str = str.replace('#','e');
+        str = str.replace('1','i');
+        str = str.replace('0','o');
+        String movement = str.substring(0, words);
+        str = str.substring(str.length() - words);
+        str = str+movement;
+        word2 = str.substring(0,str.indexOf(" "));
+        word1 = str.substring(str.indexOf(" ")+1);
+        str = word1 + " " + word2;
+        return str;
+
+    }
+    public static String decryption3(String str){
+        words=3
+        String word1 = "";
+        String word2 = "";
+        String word3 = "";
+        str = str.replace('&','u');
+        str = str.replace('@','a');
+        str = str.replace('#','e');
+        str = str.replace('1','i');
+        str = str.replace('0','o');
+
+        String movement = str.substring(0, words);
+        str = str.substring(str.length() - words);
+        str = str+movement;
+
+        word3 = str.substring(0,str.indexOf(" "));
+        word1 = str.substring(str.indexOf(" ")+1 , str.lastIndexOf(" "));
+        word2 = str.substring(str.lastIndexOf(" ")+1);
+        str = word1 + " " + word2 + " " + word3;
+        return str;
+
+    }
+
+    
+
+  }

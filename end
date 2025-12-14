@@ -1,0 +1,111 @@
+import java.util.*;
+/**
+ * Write a description of class Encryption here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class Encryption{
+    public static void main(String[] args){
+    Scanner reader = new Scanner (System.in);
+   
+        System.out.println("Welcome to the Encryption / Decryption Program");
+        System.out.println("Enter your choice(1-Encryption, 2-Decryption):  ");
+        int choice=reader.nextInt();
+        reader.nextLine();
+        System.out.println("Enter a sentence(1 - 3 words):");
+        String str = reader.next();
+        int len1 = str.length();
+        String str1 = str.replace(" ","");
+        int len2 = str1.length();
+        int words = len1 - len2 + 1;
+        if (choice==1){
+            if (words==1){
+                str=encryption1(str);
+                System.out.println(encryption1(str));
+            }
+            if (words==2){
+                str=encryption2(str);
+                System.out.println(encryption2(str));
+            }
+            if (words==3){
+                str=encryption3(str);
+                System.out.println(encryption3(str));
+            }
+        }
+        else if (choice==2){
+            if (words==1){
+                str=decryption1(str);
+                System.out.println(decryption1(str));
+            }
+            if (words==2){
+                str=decryption2(str);
+                System.out.println(decryption2(str));
+            }
+            if (words==3){
+                str=decryption3(str);
+                System.out.println(decryption3(str));
+            }
+        }
+        else{
+            return;    
+        }
+    }
+    public static String encryption1(String str){
+        int len1 = str.length();
+        String str1 = str.replace(" ","");
+        int len2 = str1.length();
+        int words = len1 - len2 + 1;
+        String word1 = "";
+        String word2 = "";
+        String word3 = "";    
+        String movement = str.substring(str.length() - words);
+        str = str.substring(0,str.length() - words);
+        str = movement + str;
+        str = str.replace('u','&');
+        str = str.replace('a','@');
+        str = str.replace('e','#');
+        str = str.replace('i','1');
+        str = str.replace('o','0');
+        return str;
+    }
+    public static String encryption2(String str){
+        int len1 = str.length();
+        String str1 = str.replace(" ","");
+        int len2 = str1.length();
+        int words = len1 - len2 + 1;
+        String word1 = "";
+        String word2 = "";
+        String word3 = "";    
+        word1 = str.substring(0,str.indexOf(" "));
+        word2 = str.substring(str.indexOf(" ")+1);
+        str = word2 + " " + word1;
+        String movement = str.substring(str.length() - words);
+        str = str.substring(0,str.length() - words);
+        str = movement + str;
+        str = str.replace('u','&');
+        str = str.replace('a','@');
+        str = str.replace('e','#');
+        str = str.replace('i','1');
+        str = str.replace('o','0');
+        return str;
+    }
+    public static String encryption3(String str){
+        int len1 = str.length();
+        String str1 = str.replace(" ","");
+        int len2 = str1.length();
+        int words = len1 - len2 + 1;
+        String word1 = "";
+        String word2 = "";
+        String word3 = "";    
+        word1 = str.substring(0,str.indexOf(" "));
+        word2 = str.substring(str.indexOf(" ")+1 , str.lastIndexOf(" "));
+        word3 = str.substring(str.lastIndexOf(" ")+1);
+        str = word3 + " " + word1 + " " + word2;
+        String movement = str.substring(str.length() - words);
+        str = str.substring(0,str.length() - words);
+        str = movement + str;
+        str = str.replace('u','&');
+        str = str.replace('a','@');
+        str = str.replace('e','#');
+        str = s…

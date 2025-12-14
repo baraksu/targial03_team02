@@ -53,9 +53,7 @@ public class Encryption{
     }
     public static String encryption1(String str){
         words=1
-        String word1 = "";
-        String word2 = "";
-        String word3 = "";    
+        String word1 = "";  
         String movement = str.substring(str.length() - words);
         str = str.substring(0,str.length() - words);
         str = movement + str;
@@ -69,8 +67,7 @@ public class Encryption{
     public static String encryption2(String str){
         words=2
         String word1 = "";
-        String word2 = "";
-        String word3 = "";    
+        String word2 = "";   
         word1 = str.substring(0,str.indexOf(" "));
         word2 = str.substring(str.indexOf(" ")+1);
         str = word2 + " " + word1;
@@ -106,8 +103,6 @@ public class Encryption{
     public static String decryption1(String str){
         words=1
         String word1 = "";
-        String word2 = "";
-        String word3 = "";
         str = str.replace('&','u');
         str = str.replace('@','a');
         str = str.replace('#','e');
@@ -125,7 +120,6 @@ public class Encryption{
         words=2
         String word1 = "";
         String word2 = "";
-        String word3 = "";
         str = str.replace('&','u');
         str = str.replace('@','a');
         str = str.replace('#','e');

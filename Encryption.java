@@ -10,19 +10,18 @@ public class Encryption
         System.out.println("Enter up to 3 words sentence");
         String str = scanner.nextLine();
         int words = wordNum(str);
-        if (words > 3){
-            System.out.println("Error - there are more than 3 words");}
+        if(choose == 1){
+            str = encryption(str);
+            System.out.println("The encrypted sentence: "+str);
+        }
+        else if(choose == 2){
+            str = decription(str);
+            System.out.println("The decrypted sentence: "+str);
+        }
         else{
-            if(choose == 1){
-                str = encryption(str);
-                System.out.println("The encrypted sentence: "+str);
-            }
-            else if(choose == 2){
-                str = decription(str);
-                System.out.println("The decrypted sentence: "+str);
-            }
-            else{
-                System.out.println(choose+" is not a valid choice");}}
+            System.out.println(choose+" is not a valid choice");}
+        if (words > 3){
+            System.out.println("Error - there are more than 3 words");
         }
         
     }

@@ -54,12 +54,11 @@ public class Encryption
         str = str.replace('o','0');
         return str;
     }
-    
-
-        
-    }
     public static String decription(String str){
-
+        String word1 = "";
+        String word2 = "";
+        String word3 = "";
+        int words = wordNum(str);
         str = str.replace('&','u');
         str = str.replace('@','a');
         str = str.replace('#','e');
@@ -84,24 +83,14 @@ public class Encryption
             word2 = str.substring(str.lastIndexOf(" ")+1);
             str = word1 + " " + word2 + " " + word3;
         }
+        return str;
     }
-    int program = reader.nextInt();
-    if (checkNum(programNum)) { 
-        return;
-    }
-    public static boolean checkNum(int num){
-        if num == 1 ||num == 2)
-            return false;
-        else{
-            System.out.println(num + " is not valid choise);
-            return true;
-    }
+    
         public static int wordNum(String str){
         int len1 = str.length();
         String str1 = str.replace(" ","");
         int len2 = str1.length();
         int words = len1 - len2 + 1;
         return words;
-}
-
+    }
 }

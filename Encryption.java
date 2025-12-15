@@ -1,30 +1,35 @@
-/**
- * Write a description of class Encryption here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+import java.util.Scanner;
 public class Encryption
 {
     public static void main(String[] args){
-        
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Encryption / Decryption Program");
+        System.out.println("Enter 1 for Encrypt | 2 for Decrypt");
+        int choose = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter up to 3 words sentence");
+        String str = scanner.nextLine();
+        int words = wordNum(str);
+        if(choose == 1){
+            str = encryption(str);
+            System.out.println("The encrypted sentence: "+str);
+        }
+        else if(choose == 2){
+            str = decription(str);
+            System.out.println("The decrypted sentence: "+str);
+        }
+        else{
+            System.out.println(choose+" is not a valid choice");}
+        if (words > 3){
+            System.out.println("Error - there are more than 3 words");
+        }
         
     }
-        int len1 = str.length();
-        String str1 = str.replace(" ","");
-        int len2 = str1.length();
-        int words = len1 - len2 + 1;
-        if (words>3){
-            System.out.println("Error - there are more than 3 words");
-            return;
-        }
-
+    public static String encryption(String str){
         String word1 = "";
         String word2 = "";
-        String word3 = "";
-    public static String encryption(String str){
-            
+        String word3 = ""; 
+        int words = wordNum(str);
         if(words == 1){
             str = str;
         }
@@ -48,6 +53,7 @@ public class Encryption
         str = str.replace('i','1');
         str = str.replace('o','0');
         return str;
+    }
     
 
         
@@ -89,6 +95,13 @@ public class Encryption
         else{
             System.out.println(num + " is not valid choise);
             return true;
-    } 
+    }
+        public static int wordNum(String str){
+        int len1 = str.length();
+        String str1 = str.replace(" ","");
+        int len2 = str1.length();
+        int words = len1 - len2 + 1;
+        return words;
+}
 
 }

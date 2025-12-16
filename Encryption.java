@@ -21,7 +21,7 @@ public class Encryption
         else{
             System.out.println(choose+" is not a valid choice");}
         if (words > 3){
-            System.out.println("Error - there are more than 3 words");
+            System.out.println("Error - Contains more than 3 words");
         }
         
     }

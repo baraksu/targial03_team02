@@ -66,7 +66,7 @@ public class Encryption
         str = str.replace('0','o');
 
         String movement = str.substring(0, words);
-        str = str.substring(str.length() - words);
+        str = str.substring(words);
         str = str+movement;
 
         if(words == 1){
